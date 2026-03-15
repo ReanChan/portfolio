@@ -3,7 +3,7 @@ const reanWorksData = [
         title: "REAN_VISUAL_01",
         desc: "Motion Graphics",
         ytId: "dQw4w9WgXcQ"
-    },
+    }.
 ];
 
 // ... (以下、render関数の変数名も reanWorksData に合わせる)
