@@ -6,32 +6,14 @@ const reanStoreData = [
         link: "https://nosechans.booth.pm/items/7943646" // とりあえずBOOTHなどのURL
     },
     {
-        title: "Glitch Texture Pack",
-        category: "Visual Asset",
+        title: "TEST",
+        category: "TEST TEST",
         price: "FREE",
         link: "downloads/新しい圧縮された (ZIP) フォルダー.zip" // 直接DLさせる場合はフォルダにzipを置く
     },
     {
-        title: "Glitch Texture Pack",
-        category: "Visual Asset",
-        price: "FREE",
-        link: "downloads/test.txt" // 直接DLさせる場合はフォルダにzipを置く
-    },
-        {
-        title: "くいっくらんてゃ",
-        category: "AE Script",
-        price: "¥350",
-        link: "https://nosechans.booth.pm/items/7943646" // とりあえずBOOTHなどのURL
-    },
-    {
-        title: "Glitch Texture Pack",
-        category: "Visual Asset",
-        price: "FREE",
-        link: "downloads/新しい圧縮された (ZIP) フォルダー.zip" // 直接DLさせる場合はフォルダにzipを置く
-    },
-    {
-        title: "Glitch Texture Pack",
-        category: "Visual Asset",
+        title: "TEST",
+        category: "TEST TEST",
         price: "FREE",
         link: "downloads/test.txt" // 直接DLさせる場合はフォルダにzipを置く
     }
