@@ -15,7 +15,6 @@ function renderWorksGallery() {
     const container = document.getElementById('works-container');
     if (!container) return;
 
-    // 変数名を reanWorksData に統一
     container.innerHTML = reanWorksData.map(work => `
         <div class="work-card">
             <div class="video-container">
