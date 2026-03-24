@@ -1,13 +1,13 @@
 const reanWorksData = [
     {
-        title: "REAN_test_01",
-        desc: "Motion Graphics",
-        ytId: "dQw4w9WgXcQ"
-    }, // ← ここが }. になっていたのを修正
+        title: "REAN First KINEPO",
+        desc: "Kinetic typography",
+        ytId: "Nq_kqDTW41s"
+    },
     {
         title: "REAN_test_02",
         desc: "3D Animation",
-        ytId: "dQw4w9WgXcQ" // サンプルとして同じIDを入れています
+        ytId: "dQw4w9WgXcQ"
     }
 ];
 

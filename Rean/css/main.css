@@ -253,3 +253,108 @@ body {
     mix-blend-mode: difference; 
     transition: transform 0.1s ease-out; 
 }
+
+/* --- Side Nav Layout Adjustment --- */
+#side-nav {
+    /* 既存の設定を維持しつつ以下を確認・変更 */
+    display: flex;
+    flex-direction: column; /* 縦並びにする */
+    justify-content: flex-start;
+}
+
+#side-nav .nav-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.nav-header {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    opacity: 0.4;
+    margin-bottom: 40px;
+}
+
+.nav-links {
+    flex-grow: 1; /* 余白を埋めてfooterを下に押し出す */
+    list-style: none;
+}
+
+/* --- Added: Side Nav Footer (SNS Links) --- */
+.nav-footer {
+    margin-top: auto; /* 自動的に最下部へ配置 */
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+}
+
+.nav-footer-label {
+    display: block;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    opacity: 0.5;
+    margin-bottom: 20px;
+}
+
+.nav-sns-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-sns-links a {
+    color: var(--fg);
+    text-decoration: none;
+    font-size: 20px;
+    transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-sns-links a:hover {
+    opacity: 0.5;
+    transform: translateY(-5px);
+}
+
+/* --- Side Nav Layout Adjustment --- */
+#side-nav .nav-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+/* 追加：ロゴエリアのレスポンシブ設定 */
+.nav-logo-area {
+    width: 100%;
+    /* ウィンドウの高さに合わせて最大サイズを制限（例：画面高の15%） */
+    max-height: 15vh; 
+    margin-bottom: 40px; /* INDEXとの隙間 */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.nav-logo-area img {
+    /* 画像本来のサイズに関わらず、横幅いっぱいまでを許容 */
+    max-width: 100%;
+    /* 縦もはみ出さないように制限 */
+    max-height: 100%;
+    /* 縦横比を維持 */
+    object-fit: contain;
+    height: auto;
+    width: auto;
+}
+
+.nav-header {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    opacity: 0.4;
+    margin-bottom: 20px; /* 隙間を少し調整 */
+}
+
+/* メニュー項目を中央付近に保ち、SNSを下に押し出す */
+.nav-links {
+    flex-grow: 1;
+    list-style: none;
+}
