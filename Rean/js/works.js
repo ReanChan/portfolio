@@ -1,12 +1,12 @@
 const reanWorksData = [
     {
         title: "REAN First KINEPO",
-        desc: "Kinetic typography",
+        desc: "Kinetic typography.<br>人生で初めてキネポを作ってみました。",
         ytId: "Nq_kqDTW41s"
     },
     {
         title: "REAN_test_02",
-        desc: "3D Animation",
+        desc: "動画が入るかのテスト用のリックロールです。",
         ytId: "dQw4w9WgXcQ"
     }
 ];

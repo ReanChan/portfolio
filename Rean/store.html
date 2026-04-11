@@ -7,38 +7,130 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/store.css">
+    <style>
+        .store-viewport {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 6vw;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+
+        .construction-container {
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .f-label {
+            display: block;
+            letter-spacing: 0.4em;
+            font-size: clamp(10px, 0.8vw, 12px);
+            font-weight: 900;
+            margin-bottom: 20px;
+            opacity: 0.4;
+        }
+
+        .main-msg {
+            font-size: clamp(40px, 8vw, 100px);
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: -0.05em;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .sub-msg {
+            font-size: clamp(14px, 1.2vw, 18px);
+            font-weight: 700;
+            opacity: 0.6;
+            line-height: 1.8;
+            margin-bottom: 50px;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #ffcc00; /* 工事中をイメージしたイエロー */
+            border-radius: 50%;
+            box-shadow: 0 0 10px #ffcc00;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 60px;
+            color: var(--fg);
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 0.2em;
+            opacity: 0.4;
+            transition: 0.3s;
+            border-bottom: 1px solid transparent;
+        }
+
+        .back-btn:hover {
+            opacity: 1;
+            border-bottom: 1px solid var(--fg);
+        }
+
+        @media (max-width: 600px) {
+            .store-viewport { overflow: visible; padding: 120px 8% 60px; }
+        }
+    </style>
 </head>
 <body>
+    <canvas id="bg-canvas"></canvas>
     <div id="cursor"></div>
     <div id="edge-trigger"></div>
-
-<nav id="side-nav">
-    <div class="nav-inner">
-        <div class="nav-logo-area">
-            <img src="pic/logo.png" alt="LOGO"> </div>
-
-        <div class="nav-header">INDEX</div>
-        <ul class="nav-links">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="works.html">WORKS</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-            <li><a href="store.html">STORE</a></li>
-        </ul>
-
-        <div class="nav-footer">
-            <span class="nav-footer-label">GET IN TOUCH</span>
-            <div class="nav-sns-links">
-                <a href="https://coconala.com/users/5839075" target="_blank"><i class="bi bi-shop"></i></a>
-                <a href="https://x.com/Rean_naeR" target="_blank"><i class="bi bi-twitter-x"></i></a>
-                <a href="https://www.youtube.com/@Rean_naeR" target="_blank"><i class="bi bi-youtube"></i></a>
+    
+    <nav id="side-nav">
+        <div class="nav-inner">
+            <div class="nav-logo-area">
+                <img src="pic/logo.png" alt="LOGO">
+            </div>
+            <div class="nav-header">INDEX</div>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="works.html">WORKS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="store.html" class="active">STORE</a></li>
+            </ul>
+            <div class="nav-footer">
+                <span class="nav-footer-label">GET IN TOUCH</span>
+                <div class="nav-sns-links">
+                    <a href="https://coconala.com/users/5839075" target="_blank"><i class="bi bi-shop"></i></a>
+                    <a href="https://x.com/Rean_naeR" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                    <a href="https://www.youtube.com/@Rean_naeR" target="_blank"><i class="bi bi-youtube"></i></a>
+                </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
     <header id="header">
-        <div class="logo"><a href="index.html" style="color:inherit; text-decoration:none;">REAN.</a></div>
+        <div class="logo">REAN.</div>
         <div class="header-right">
             <button id="theme-toggle" onclick="cycleTheme()"><i class="bi bi-droplet-half"></i></button>
             <button class="menu-btn" onclick="toggleMenu()">MENU</button>
@@ -46,15 +138,21 @@
     </header>
 
     <main class="store-viewport">
-        <div class="store-header">
-            <span class="f-label">DIGITAL ASSETS</span>
-            <h1>STORE</h1>
+        <div class="construction-container">
+            <span class="f-label">OFFLINE</span>
+            <h1 class="main-msg">UNDER<br>CONSTRUCTION</h1>
+            <p class="sub-msg">現在、ストアページは公開準備中です。<br>プロジェクトの公開まで今しばらくお待ちください。</p>
+            
+            <div class="status-badge">
+                <span class="status-dot"></span>
+                PREPARING ASSETS
+            </div>
+
+            <br>
+            <a href="index.html" class="back-btn">BACK TO HOME</a>
         </div>
-        
-        <div id="store-container" class="store-grid"></div>
     </main>
 
     <script src="js/ui-core.js"></script>
-    <script src="js/store.js"></script>
 </body>
 </html>
