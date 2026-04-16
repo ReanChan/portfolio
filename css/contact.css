@@ -55,7 +55,6 @@
     opacity: 0.5;
 }
 
-/* スマホ対応 */
 @media (max-width: 600px) {
     .contact-links {
         flex-direction: column;
